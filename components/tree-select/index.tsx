@@ -83,6 +83,7 @@ const TreeSelect = defineComponent({
         value: 'value',
       };
       const replaceFields = { ...defaultFields, ...this.$props.replaceFields };
+      // 这里会造成 #title 死循环，官网案例BUG
       return treeData.map(item => {
         const { slots = {} } = item;
         const label = item[replaceFields.label];
