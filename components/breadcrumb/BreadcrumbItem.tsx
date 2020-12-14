@@ -47,7 +47,7 @@ export default defineComponent({
     const children = getSlot(this);
     let link: HTMLAttributes;
     if (hasProp(this, 'href')) {
-      link = <a class={`${prefixCls}-link`}>{children}</a>;
+      link = <a class={`${prefixCls}-link`} href={getComponent(this, 'href')}>{children}</a>;
     } else {
       link = <span class={`${prefixCls}-link`}>{children}</span>;
     }
