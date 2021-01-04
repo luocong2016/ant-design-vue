@@ -10,6 +10,7 @@ export const timeLineItemProps = {
   prefixCls: PropTypes.string,
   color: PropTypes.string,
   dot: PropTypes.any,
+  label: PropTypes.any,
   pending: PropTypes.looseBool,
   position: PropTypes.oneOf(tuple('left', 'right', '')).def(''),
 };
@@ -45,6 +46,7 @@ export default defineComponent({
     });
     return (
       <li class={itemClassName}>
+        {label && <div className={`${prefixCls}-item-label`}>{label}</div>}
         <div class={`${prefixCls}-item-tail`} />
         <div
           class={dotClassName}
